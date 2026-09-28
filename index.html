@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f6f8fb"><link rel="icon" href="assets/images/favicon.png"><link rel="stylesheet" href="assets/css/admin.css"><title>Kafi Abdullah — Admin</title></head>
+<body>
+<div id="page-loader" class="page-loader"><span class="loader-ring"></span></div>
+<section id="login-view" class="login-shell">
+  <div class="login-card">
+    <div class="admin-brand"><img src="assets/images/favicon.png" alt=""><div><strong>Portfolio Admin</strong><span>Content Management</span></div></div>
+    <p class="eyebrow">SECURE AREA</p><h1>Welcome back.</h1><p class="muted">Sign in to manage projects, articles and messages.</p>
+    <form id="login-form"><label>Email<input id="email" type="email" autocomplete="username" required value="contact.kafiabdullah@gmail.com"></label><label>Password<input id="password" type="password" autocomplete="current-password" required></label><button class="primary" type="submit">Sign in <span>→</span></button><p id="login-status" class="status"></p></form>
+  </div>
+</section>
+
+<div id="app-shell" class="app-shell hidden">
+  <aside class="sidebar">
+    <div class="admin-brand"><img src="assets/images/favicon.png" alt="Kafi Abdullah logo"><div><strong>Portfolio Admin</strong><span>Content Management</span></div></div>
+    <nav class="side-nav">
+      <button data-view="dashboard" class="active">Dashboard</button><button data-view="articles">Articles</button><button data-view="projects">Projects</button><button data-view="messages">Messages</button><button data-view="settings">Settings</button>
+    </nav>
+    <button id="logout" class="logout">Log out</button>
+  </aside>
+  <div class="mobile-bar"><button id="side-open" aria-label="Open menu">☰</button><span>Portfolio Admin</span><img src="assets/images/favicon.png" alt="Kafi Abdullah logo"></div>
+  <main class="admin-main">
+    <section id="view-dashboard" class="view active">
+      <div class="topbar"><div><p class="eyebrow">OVERVIEW</p><h1>Dashboard</h1><p class="muted">A quick view of your portfolio activity.</p></div><a class="view-site" href="../Public/index.html" target="_blank">View site ↗</a></div>
+      <div class="stats"><div><span>Total articles</span><strong id="stat-articles">—</strong></div><div><span>Published</span><strong id="stat-published">—</strong></div><div><span>Projects</span><strong id="stat-projects">—</strong></div><div><span>Messages</span><strong id="stat-messages">—</strong></div><div><span>Total visits</span><strong id="stat-visits">—</strong></div><div><span>Active now</span><strong id="stat-active">—</strong></div></div>
+      <div class="panel"><div class="panel-head"><div><h2>Recent messages</h2><p class="muted">Click a message to open the full detail.</p></div><button class="ghost" data-view-jump="messages">View all</button></div><div id="dashboard-messages"></div></div>
+    </section>
+
+    <section id="view-articles" class="view">
+      <div class="topbar"><div><p class="eyebrow">CONTENT</p><h1>Articles</h1><p class="muted">Write, preview, save drafts and publish.</p></div><button class="primary" id="new-article">+ New article</button></div>
+      <div class="content-layout"><div class="list-panel"><input class="search" id="article-search" placeholder="Search articles…"><div id="article-list"></div></div><div class="editor-panel" id="article-editor"></div></div>
+    </section>
+
+    <section id="view-projects" class="view">
+      <div class="topbar"><div><p class="eyebrow">WORK</p><h1>Projects</h1><p class="muted">Manage your selected work.</p></div><button class="primary" id="new-project">+ New project</button></div>
+      <div class="content-layout"><div class="list-panel"><input class="search" id="project-search" placeholder="Search projects…"><div id="project-list"></div></div><div class="editor-panel" id="project-editor"></div></div>
+    </section>
+
+    <section id="view-messages" class="view">
+      <div class="topbar"><div><p class="eyebrow">INBOX</p><h1>Messages</h1><p class="muted">Click any message to see the complete details.</p></div></div>
+      <div class="messages-layout"><div class="message-list" id="message-list"></div><div class="message-detail" id="message-detail"><div class="detail-empty">Select a message from the list.</div></div></div>
+    </section>
+
+    <section id="view-settings" class="view">
+      <div class="topbar"><div><p class="eyebrow">SETTINGS</p><h1>Site settings</h1><p class="muted">Small controls and deployment notes.</p></div></div>
+      <div class="panel settings"><h2>Brand assets</h2><p>Place your <code>favicon.png</code> and profile image in <code>Public/assets/images/</code> and <code>Admin/assets/images/</code>. The same favicon is used in the navbar and browser tab.</p><h2>Firebase</h2><p>Both Public and Admin use the same Firebase project. Keep Authentication, Firestore and Storage rules restricted.</p><h2>Admin account</h2><p id="admin-email"></p></div>
+    </section>
+  </main>
+</div>
+<script type="module" src="assets/js/admin.js"></script>
+</body></html>

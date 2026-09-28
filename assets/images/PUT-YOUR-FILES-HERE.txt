@@ -1,0 +1,1 @@
+Add your real favicon.png here. The same file is used in the Admin navbar/login and browser tab.
